@@ -1,11 +1,15 @@
 # spec/string_calculator_spec.rb
 
+# rspec --color --format=documentation
+
 require_relative("../lib/string_calculator.rb")
 
 RSpec.describe StringCalculator do
-  it "returns 0 for empty string" do
-    the_calculator = StringCalculator.new
+  let :the_calculator do
+    StringCalculator.new
+  end
 
+  it "returns 0 for empty string" do
     # p the_calculator.add("") == 0
     expect( the_calculator.add("") ).to eq(0)
   end

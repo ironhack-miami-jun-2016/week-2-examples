@@ -30,3 +30,27 @@ get "/recipe" do
 
   erb(:recipe_page)
 end
+
+
+users = {
+  "khalifenizar" => { :name => "Nizar Khalife", :email => "nnnnn@nnnnn.com" },
+  "ag" => { :name => "Alida Gagliuffi", :email => "agagagag@agagag.com" },
+  "alia" => { :name => "Alia Poonawala", :email => "aaaa@aaaaa.com" }
+}
+
+
+get "/users/:username" do
+  @name = params[:username]
+
+  if @name == "jalexy12" || @name == "josh"
+    erb(:whiskey_time)
+  else
+    @info = users[@name]
+    erb(:user_profile)
+  end
+end
+
+
+
+
+

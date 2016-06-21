@@ -1,5 +1,5 @@
 class Task
-    attr_reader :content, :id
+    attr_reader :content, :id, :created_at
 
     @@current_id = 1
 
@@ -8,6 +8,7 @@ class Task
         @id = @@current_id
         @@current_id += 1
         @is_complete = false
+        @created_at = Time.now
     end
 
     def make_incomplete!

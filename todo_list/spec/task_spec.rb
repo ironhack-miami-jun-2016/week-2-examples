@@ -22,4 +22,14 @@ RSpec.describe Task do
     end
   end
 
+  describe "make_incomplete!" do
+    it "sets @is_complete to false" do
+      task = Task.new("Wash Pants")
+
+      task.complete!
+      task.make_incomplete!
+
+      expect( task.complete? ).to eq(false)
+    end
+  end
 end

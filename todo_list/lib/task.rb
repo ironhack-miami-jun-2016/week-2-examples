@@ -10,6 +10,10 @@ class Task
         @is_complete = false
     end
 
+    def complete!
+      @is_complete = true
+    end
+
     def complete?
       if @is_complete == true
         true

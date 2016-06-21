@@ -12,4 +12,14 @@ RSpec.describe Task do
     end
   end
 
+  describe "complete!" do
+    it "sets @is_complete to true" do
+      task = Task.new("Wash Pants")
+
+      task.complete!
+
+      expect( task.complete? ).to eq(true)
+    end
+  end
+
 end

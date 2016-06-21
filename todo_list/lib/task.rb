@@ -26,4 +26,8 @@ class Task
         false
       end
     end
+
+    def update_content!(new_content)
+      @content = new_content
+    end
 end

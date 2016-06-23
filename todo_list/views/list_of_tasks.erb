@@ -1,0 +1,11 @@
+<h1> Todo List App </h1>
+
+<h2> Your tasks </h2>
+
+<ul>
+  <% @tasks.each do |the_task| %>
+    <li>
+      <%= the_task.content %>
+    </li>
+  <% end %>
+</ul>

@@ -11,3 +11,16 @@ get "/" do
 
   erb :list_of_tasks
 end
+
+
+get "/new_task" do
+  erb :new_task
+end
+
+post "/create_task" do
+  new_task = Task.new( params[:task_content] )
+
+  my_list.add_task( new_task )
+
+  redirect to("/")
+end

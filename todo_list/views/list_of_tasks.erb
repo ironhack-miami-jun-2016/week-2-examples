@@ -6,6 +6,14 @@
   <% @tasks.each do |the_task| %>
     <li>
       <%= the_task.content %>
+
+      <% if the_task.complete? %>
+        DONE!
+      <% else %>
+        <a href="/complete_task/<%= the_task.id %>">
+          Complete this task
+        </a>
+      <% end %>
     </li>
   <% end %>
 </ul>

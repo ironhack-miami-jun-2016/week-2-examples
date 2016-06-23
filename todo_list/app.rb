@@ -24,3 +24,11 @@ post "/create_task" do
 
   redirect to("/")
 end
+
+
+get "/complete_task/:id" do
+  the_task = my_list.find_task_by_id( params[:id].to_i )
+  the_task.complete!
+
+  redirect to("/")
+end
